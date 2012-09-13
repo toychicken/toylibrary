@@ -37,6 +37,7 @@ dwsync.xml
 intermediate
 publish
 .idea
+qunit
 
 # build script local files
 build/buildinfo.properties
