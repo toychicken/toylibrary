@@ -4,6 +4,7 @@
 
 It's sort of an application framework, rather than a library. 
 It uses a simple pub/sub approach for messaging, that I hope can synchronise across front and backend (though am focussing on front-end to start with)
+It's aimed at large scale e-commerce sites with legacy CMS systems, where codebases are often spread across many departments. It uses HTML5 main currency, rather than try and coerce these systems into giving up Mustache templates or JSON, where they're not designed to do so.
 
 ##Why?
 
