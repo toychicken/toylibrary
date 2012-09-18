@@ -7,7 +7,7 @@
 
 // we're going to assume that you already have checked that your namespace is available
 
-(function (_G, _C, me, undefined){
+(function (_G, _C, _M, me, undefined){
 
 	/*
 		About this pattern
@@ -23,10 +23,21 @@
 
 	// like good little Crockfordians, we declare all our private variables and functions at the top with one single var statement... 
 
-	var // private functions
+	var	// private variables
+		myName = 'sample', // this should always be included, you know, for completeness (and handy for passing into logs etc.)
+
+		 // private functions
 		doSomething,
 
-		// private variables
-		isSomething;
+		// private detective
+		magnumPI;
 
-})(toy.GLOBALS, toy.CONFIG, toy.sample = toy.sample || {});
+	me.init = function () {
+
+		// this function always destroys itself once it's initialised once
+		me.init = function () {log('toy.' + myName + ' has already initialised')};
+	};
+
+	toy.ready(myName); // this tells the toy initialiser that this script is ready to execute, and to be added to the init queue.
+
+})(toy.GLOBALS, toy.CONFIG, toy.pubsub, toy.sample = toy.sample || {});
